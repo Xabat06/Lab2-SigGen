@@ -36,7 +36,9 @@ int main(int argc, char **argv, char **env) {
             top->eval ();
         }
 
-        vbdPlot(int(top->dout), 0, 255); // plot graph
+        top->offset = vbdValue(); // receive offset value from vbdValue()
+        vbdPlot(int(top->dout1), 0, 255); // plot graph
+        vbdPlot(int(top->dout2), 0, 255); // 2 vbdPlot()s to plot 2 curves
         vbdCycle(i+1);
         
             // either simulation finished, or 'q' is pressed
